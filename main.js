@@ -1,3 +1,5 @@
+// this works on live server and on github
+// https://jeffureta.github.io/access-json/
 function testGetJSON() {
 
     // version 0.1 url get-json-google-script
