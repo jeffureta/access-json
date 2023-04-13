@@ -5,7 +5,7 @@
 function testGetJSON() {
 
     // version 0.1 url get-json-google-script
-    const url = "https://script.google.com/macros/s/AKfycbzUO8tOvGWfJHomGBanHYL2UJLXEozXAeBJ6TH8GMSzM-3WpjZeTmPZMRwxkFy8XzXZ/exec"
+    const url = "https://script.google.com/macros/s/AKfycbzUO8tOvGWfJHomGBanHYL2UJLXEozXAeBJ6TH8GMSzM-3WpjZeTmPZMRwxkFy8XzXZ/exec";
 
 fetch(url)
     .then(data => data.json()).then()
@@ -14,4 +14,29 @@ fetch(url)
     })
 }
 
+
+function addJSON() {
+
+    // version 0.3 url get-json-google-script
+    // everytime doPost() is changed you need to get the new url
+    const url = "https://script.google.com/macros/s/AKfycbyMf4r8qm5r0xHuncRlXTvbxyF4XRrbSgFMEEfTpXxTuc5uWx58Plp7pyqvCtPbCC4l/exec";
+
+    // fetch documentation below
+    // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+    fetch(url, {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        mode: "no-cors", // no-cors, *cors, same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "omit", // include, *same-origin, omit
+        headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: "follow", // manual, *follow, error
+        referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+        body: JSON.stringify({name: "Jepoy"}), // body data type must match "Content-Type" header
+    });
+}
 document.querySelector("#get-json-data").addEventListener("click", testGetJSON);
+
+document.querySelector("#add-json-data").addEventListener("click", addJSON);
