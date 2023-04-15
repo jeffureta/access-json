@@ -32,7 +32,7 @@ function addJSON() {
         },
         redirect: "follow", // manual, *follow, error
         referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-        body: JSON.stringify({name: "JEFF"}), // body data type must match "Content-Type" header
+        body: JSON.stringify({"first name":"Jeff","last name":"Anderson","email address":"acksonsmith10@fakehost.com"}), // body data type must match "Content-Type" header
     });
 }
 document.querySelector("#get-json-data").addEventListener("click", testGetJSON);
